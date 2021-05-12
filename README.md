@@ -15,7 +15,7 @@
 - has_many :photo
 - has_many :comments
 
-## phooto テーブル
+## photo テーブル
 
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
