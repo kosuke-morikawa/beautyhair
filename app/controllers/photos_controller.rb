@@ -1,7 +1,5 @@
 class PhotosController < ApplicationController
   def index
-    @phptos = Photo.all
+    @photos = Photo.all
   end
-
-  
 end
