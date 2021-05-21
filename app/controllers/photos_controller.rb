@@ -4,11 +4,25 @@ class PhotosController < ApplicationController
   end
 
   def new
-    @phpto = Photo.new
+    @photo = Photo.new
   end
 
   def create
     Photo.create(photo_params)
+  end
+
+  def destroy
+    photo = Photo.find(params[:id])
+    photo.destroy
+  end
+
+  def edit
+    @photo = Photo.find(params[:id])
+  end
+
+  def update
+    @photo = Photo.find(params[:id])
+    @photo.update(photo_params)
   end
 
 
