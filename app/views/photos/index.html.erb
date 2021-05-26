@@ -5,6 +5,20 @@
 <div class="contents row">
    <% @photos.each do |photo| %>
     <div class="content_post" style="background-image: url(<%= photo.image %>);">
+      <div class="more">
+        <span><%= image_tag '下矢印.jpeg' %></span>
+        <ul class="more_list">
+          <li>
+            <%= link_to '詳細', photo_path(photo.id), method: :get %>
+          </li>
+          <li>
+            <%= link_to '編集', edit_photo_path(photo.id), method: :get %>
+          </li>
+          <li>
+            <%= link_to '削除', photo_path(photo.id), method: :delete %>
+          </li>
+        </ul>
+      </div>
       <p><%= photo.text %></p>
       <span class="name">
         <%= photo.name %>
