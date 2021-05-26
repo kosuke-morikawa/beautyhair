@@ -36,6 +36,7 @@ class PhotosController < ApplicationController
   def photo_params
     params.require(:photo).permit(:name, :text, :image)
   end
+
   
   def set_photo
     @photo = Photo.find(params[:id])
