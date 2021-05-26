@@ -2,6 +2,7 @@
   <div class="container">
     <h2>Sign up</h2>
     <%= form_with model: @photo, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+
       <%= devise_error_messages! %>
 
       <div class="field">
@@ -33,3 +34,4 @@
     <% end %>
   </div>
 </div>
+
