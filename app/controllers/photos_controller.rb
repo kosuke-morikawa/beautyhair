@@ -3,7 +3,7 @@ class PhotosController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @photos = Photo.all
+    @photos = Photo.includes(:user)
   end
 
   def new
@@ -35,7 +35,7 @@ class PhotosController < ApplicationController
 
   private
   def photo_params
-    params.require(:photo).permit(:name, :text, :image)
+    params.require(:photo).permit(:text, :image).merge(user_id: current_user.id)
   end
 
   
