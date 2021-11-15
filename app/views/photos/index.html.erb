@@ -11,12 +11,14 @@
           <li>
             <%= link_to '詳細', photo_path(photo.id), method: :get %>
           </li>
+          <% if user_signed_in? && current_user.id == photo.user_id %>
           <li>
             <%= link_to '編集', edit_photo_path(photo.id), method: :get %>
           </li>
           <li>
             <%= link_to '削除', photo_path(photo.id), method: :delete %>
           </li>
+          <% end %>
         </ul>
       </div>
       <p><%= photo.text %></p>
