@@ -1,8 +1,6 @@
 <div class="contents row">
   <p><%= @nickname %>さんの投稿一覧</p>
   <% @photos.each do |photo| %>
-    <div class="content_post" style="background-image: url(<%= photo.image %>);">
-      <p><%= photo.text %></p>
-    </div>
+    <%= render partial: "photos/photo", locals: { photo: photo } %>
   <% end %>
 </div>
