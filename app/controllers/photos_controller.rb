@@ -29,7 +29,8 @@ class PhotosController < ApplicationController
   end
 
   def show
-    
+    @comment = Comment.new
+    @comments = @photo.comments.includes(:user)
   end
 
 
